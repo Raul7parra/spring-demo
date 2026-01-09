@@ -1,0 +1,3 @@
+api:
+  url: "https://test.example"
+  timeout-ms: 2000
