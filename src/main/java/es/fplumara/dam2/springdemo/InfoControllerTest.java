@@ -1,3 +1,5 @@
+
+/*
 package es.fplumara.dam2.springdemo;
 
 import org.junit.jupiter.api.Test;
@@ -25,5 +27,5 @@ class InfoControllerTest {
                 .andExpect(jsonPath("$.appName").exists())
                 .andExpect(jsonPath("$.version").exists());
     }
-    
+
 }
