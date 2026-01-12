@@ -1,7 +1,5 @@
-/*
 package es.fplumara.dam2.springdemo.controllers;
 
-import es.fplumara.dam2.external.HelloController;
 import es.fplumara.dam2.springdemo.services.HelloService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(HelloController.class)
 class HelloControllerWebTest {
@@ -24,10 +23,10 @@ class HelloControllerWebTest {
 
     @Test
     void hello_returns_service_message() throws Exception {
-        given(helloService.sayHello()).willReturn("Hola desde el servicio");
+        given(helloService.sayHello()).willReturn("Hola desde el mock");
 
         mockMvc.perform(get("/hello"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hola desde el servicio"));
+                .andExpect(content().string("Hola desde el mock"));
     }
 }
