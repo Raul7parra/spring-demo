@@ -6,3 +6,7 @@ api:
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+  security:
+    jwt:
+      secret: ${JWT_SECRET:holaDAM2!springMola-esta-clave-tiene-32chars}
+      ttl-seconds: 3600

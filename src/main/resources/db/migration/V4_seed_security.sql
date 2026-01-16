@@ -5,11 +5,11 @@ INSERT INTO roles(name) VALUES ('ADMIN') ON CONFLICT (name) DO NOTHING;
 -- 2) Usuarios (password en BCrypt)
 -- Sustituye los hashes por los tuyos (ver más abajo)
 INSERT INTO users(username, password, enabled)
-VALUES ('user',  '$2a$10$mGK9ufsj0bWB10cUE3gdE.LT3L4TsaycJPjVR6qzVzE7BB5dSYE.O',  TRUE)
+VALUES ('user',  '$2a$10$REEMPLAZA_HASH_USER',  TRUE)
     ON CONFLICT (username) DO NOTHING;
 
 INSERT INTO users(username, password, enabled)
-VALUES ('admin', '$2a$10$Dif6BwecrBrllY0FAz17AOThGBjbbcdgpj7avz589eaFS8HgWmhVW', TRUE)
+VALUES ('admin', '$2a$10$REEMPLAZA_HASH_ADMIN', TRUE)
     ON CONFLICT (username) DO NOTHING;
 
 -- 3) Relación user_roles (idempotente por PK)

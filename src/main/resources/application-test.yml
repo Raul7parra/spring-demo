@@ -12,3 +12,7 @@ api:
     jpa:
       hibernate:
         ddl-auto: create-drop
+    security:
+      jwt:
+        secret: "holaDAM2!springMola-esta-clave-tiene-32chars"
+        ttl-seconds: 3600
